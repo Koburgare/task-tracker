@@ -1,81 +1,281 @@
+/* =========================
+   Grundinställningar
+========================= */
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f4f4f4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
-}
-
-ul {
-  list-style-type: none;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #111111;
+    line-height: 1.6;
 }
 
 .container {
-  width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: min(1100px, calc(100% - 48px));
+    margin: 0 auto;
 }
 
-.container h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
+
+/* =========================
+   Gemensamt
+========================= */
+
+.eyebrow {
+    margin: 0 0 20px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+h1,
+h2,
+h3 {
+    margin-top: 0;
 }
 
-.form-control {
-  display: flex;
-  flex-direction: column;
+h1 {
+    margin-bottom: 30px;
+    font-size: clamp(40px, 6vw, 68px);
+    line-height: 1.05;
+    letter-spacing: -2px;
 }
 
-.form-control label {
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #555;
+h2 {
+    font-size: clamp(34px, 5vw, 52px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -1px;
 }
 
-.form-control input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
+p {
+    margin-top: 0;
 }
 
-.form-control input:focus {
-  border-color: #007bff;
-  outline: none;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+.button {
+    display: inline-block;
+    padding: 18px 42px;
+    border-radius: 60px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.btn {
-  padding: 10px;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #fff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
 }
 
-.btn:hover {
-  background-color: #0056b3;
+
+/* =========================
+   Hero
+========================= */
+
+.hero {
+    padding: 100px 24px;
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        rgb(247, 255, 249) 0%,
+        rgb(232, 255, 252) 100%
+    );
+}
+
+.hero .container {
+    max-width: 1100px;
+}
+
+.hero .eyebrow {
+    color: #111111;
+}
+
+.hero .intro {
+    max-width: 750px;
+    margin: 0 auto 35px;
+    font-size: 20px;
+    line-height: 1.7;
+}
+
+.button-gradient {
+    background: linear-gradient(
+        135deg,
+        rgb(13, 255, 0) 0%,
+        rgb(53, 248, 235) 100%
+    );
+    color: #111111;
+}
+
+.small-text {
+    margin-top: 25px;
+    margin-bottom: 0;
+    font-size: 13px;
+}
+
+
+/* =========================
+   Features
+========================= */
+
+.features {
+    padding: 100px 24px;
+}
+
+.features h2 {
+    margin-bottom: 60px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.feature-card {
+    padding: 45px;
+    border-radius: 24px;
+    background-color: #f7f7f7;
+}
+
+.feature-card h3 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: 750;
+}
+
+.feature-card p {
+    margin-bottom: 0;
+}
+
+
+/* =========================
+   Person / Mamiya Takuji
+========================= */
+
+.person {
+    padding: 100px 24px;
+    background-color: #111111;
+    color: #ffffff;
+}
+
+.person-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.person h2 {
+    margin-bottom: 40px;
+    font-size: clamp(34px, 5vw, 56px);
+    line-height: 1.08;
+}
+
+.person blockquote {
+    margin: 0 0 30px;
+    padding-left: 40px;
+    border-left: 4px solid #35f8eb;
+}
+
+.person blockquote p {
+    margin-bottom: 10px;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.person cite {
+    color: #35f8eb;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.person-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 28px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+    padding: 100px 24px;
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        rgb(13, 255, 0) 0%,
+        rgb(53, 248, 235) 100%
+    );
+}
+
+.cta .container {
+    max-width: 900px;
+}
+
+.cta h2 {
+    margin-bottom: 25px;
+    font-size: clamp(34px, 5vw, 58px);
+    line-height: 1.05;
+}
+
+.cta p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+.button-dark {
+    padding-left: 48px;
+    padding-right: 48px;
+    background-color: #111111;
+    color: #ffffff;
+}
+
+
+/* =========================
+   Mobil
+========================= */
+
+@media (max-width: 768px) {
+
+    .container {
+        width: min(100% - 32px, 1100px);
+    }
+
+    .hero,
+    .features,
+    .person,
+    .cta {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .person-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .feature-card {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: clamp(38px, 11vw, 55px);
+    }
 }
